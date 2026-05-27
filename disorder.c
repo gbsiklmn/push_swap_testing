@@ -6,13 +6,13 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:48:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 15:55:43 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:59:01 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	get_inverstions(t_node *a)
+long	get_inversions(t_node *a)
 {
 	long	inv;
 	t_node	*i;
@@ -33,3 +33,37 @@ long	get_inverstions(t_node *a)
 	}
 	return (inv);
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	t_node	*node1;
+	t_node	*node2;
+	t_node	*node3;
+	long	mistakes;
+
+	node1 = malloc(sizeof(t_node));
+	node2 = malloc(sizeof(t_node));
+	node3 = malloc(sizeof(t_node));
+
+	node1->value = 3;
+	node1->next = node2;
+	
+	node2->value = 1;
+	node2->next = node3;
+
+	node3->value = 2;
+	node3->next = NULL;
+
+	mistakes = get_inversions(node1);
+	printf("testing stack: 3, 1, 2\n");
+	printf("total inversions found: %ld\n", mistakes);
+	printf("expected inversions: 2 (3>1 and 3>2)\n");
+
+	free(node1);
+	free(node2);
+	free(node3);
+
+	return(0);
+}*/
