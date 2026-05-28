@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:59 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 19:04:26 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/05/28 16:40:23 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	pb(t_node **a, t_node **b, t_stats *s)
 	write(1, "pb\n", 3);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -83,4 +83,4 @@ int	main(void)
 	free(stack_b->next);
 	free(stack_b);
 	return (0);
-}
+}*/
