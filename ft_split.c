@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:40 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 14:31:22 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/01 16:49:01 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,36 @@ void	free_split(char **split)
 	while (split[i])	
 		free(split[i++]);
 	free(split);
+	
+}
+
+#include <stdio.h>
+
+void	print_split_result(char **result)
+{
+	int	i;
+	if (!result)
+	{
+		printf("Result is NULL\n");
+		return;
+	}
+	i = 0;
+	while (result[i])
+	{
+		printf(" [Word %d]: \"%s\"\n", i, result[i]);
+		i++;
+	}
+	if (i == 0)
+		printf("  (Empty array)\n");
+}
+
+int	main(void)
+{
+	char s[20] = "Hello world from 42";
+	char **result;
+
+	result = ft_split(s, ' ');
+	print_split_result(result);
+    free_split(result);
 	
 }
