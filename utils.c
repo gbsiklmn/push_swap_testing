@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 14:51:44 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/01 15:18:06 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,56 @@ void	error_exit(void)
 
 #include <stdio.h>
 
-void	test_atol(const char *str, long expected_val, int expected_err)
+void test_atol(const char *str, long expected_val, int expected_err)
 {
-	int	error;
-	long res;
-	
-	res = ft_atol(str, &error);
-	printf("Input: '%s' | Got: %ld, Error: %d | Expected: %ld, Error: %d -> %s\n",
-			str, res, error, expected_val, expected_err, (res == expected_val && error = expected_err) ? "SUCCESS": "FAIL");
+    int  error;
+    long res;
+
+    res = ft_atol(str, &error);
+    printf("Input: '%s' | Got: %ld, Error: %d | Expected: %ld, Error: %d -> %s\n",
+           str, res, error, expected_val, expected_err,
+           (res == expected_val && error == expected_err) ? "SUCCESS" : "FAIL");
 }
+
+/*int	main(void)
+{
+	printf("---Testing ft_strcmp\n");
+	printf("Same strings('abc', 'abc'): %d (Expected: 0)\n", ft_strcmp("abc", "abc"));
+	printf("S1 greater ('abd', 'abc'): %d (Expected: >0)\n", ft_strcmp("abd", "abc"));
+	printf("S2 greater ('abc', 'abd'): %d (Expected: <0)\n\n", ft_strcmp("abc", "abd"));
+	
+	printf("===Testing is_sorted ---\n");
+	t_node *n1 = malloc(sizeof(t_node));
+	t_node *n2 = malloc(sizeof(t_node));
+	t_node *n3 = malloc(sizeof(t_node));
+
+	n1->value = 10; n1->next = n2;
+	n2->value = 20; n2->next = n3;
+	n3->value = 30; n3->next = NULL;
+	printf("Testing sorted stack: %d (Expected: 1)\n", is_sorted(n1));
+
+	n2->value = 35;
+	printf("Testing unsorted stack: %d (Expected: 0)\n\n", is_sorted(n1));
+
+	free(n1); free(n2); free(n3);
+
+	printf("=== Testing ft_atol & Overflows ==\n");
+	test_atol("42", 42, 0);
+	test_atol("   -123", -123, 0);
+	test_atol("0", 0, 0);
+
+	test_atol("2147483647", 2147483647, 0);
+	test_atol("2147483648", 0, 1);
+	test_atol("-2147483648", -2147483648, 0);
+	test_atol("-2147483649", 0, 1);
+	test_atol("05", 0, 1);
+	test_atol("+5", 0, 1);
+	test_atol("42a", 0, 1);
+
+	printf("\n====Testing error_exit----\n");
+	printf("Executing error_exit now. The program should print 'Error' and exit immediately:\n ");
+	
+	error_exit();
+	printf("If you see this line, error_exit failed to terminate the program\n");
+	return (0);
+}*/
