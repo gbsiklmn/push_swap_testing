@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 16:44:34 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/01 14:32:50 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	int	handle_flags(char *arg, t_stats *stats)
 {
 	if (ft_strcmp(arg, "--simple") == 0)
 		stats->strat = STRAT_SIMPLE;
-	else if (ft_strcmp(ag, "--medium") == 0)
+	else if (ft_strcmp(arg, "--medium") == 0)
 		stats->strat = STRAT_MEDIUM;
 	else if (ft_strcmp(arg, "--complex") == 0)
 		stats->strat = STRAT_COMPLEX;
@@ -48,7 +48,7 @@ static	void	check_duplicates(t_node *stack)
 	}
 }
 
-static	void	process_arg(char *arg, t_node **a);
+static	void	process_arg(char *arg, t_node **a)
 {
 	char	**nums;
 	int		err;
@@ -56,7 +56,7 @@ static	void	process_arg(char *arg, t_node **a);
 	long	val;
 
 	nums = ft_split(arg, ' ');
-	if (!nums || nums[0])
+	if (!nums || !nums[0])
 		error_exit();
 	j = 0;
 	while (nums[j])
@@ -91,3 +91,35 @@ t_node	*parse_input(int argc, char **argv, t_stats *stats)
 		check_duplicates(a);
 	return (a);
 }
+
+/*#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	t_stats	stats = {0};
+	t_node *stack_a = NULL;
+	t_node *tmp;
+
+	if (argc < 2)
+	{
+		printf("Please provide numbers to test\n");
+		return (0);
+	}
+
+	stack_a = parse_input(argc, argv, &stats);
+	
+	printf("---Passed Stack A---\n");
+	tmp = stack_a;
+	while (tmp)
+	{
+		printf("Value: %d\n", tmp->value);
+		tmp = tmp->next;
+	}
+
+	printf("\n ---- Passed Flags ---\n");
+	printf("Strategy Set to: %d\n", stats.strat);
+	printf("Benchmark Mode: %d\n", stats.bench);
+
+	free_stack(&stack_a);
+	return (0);
+}*/

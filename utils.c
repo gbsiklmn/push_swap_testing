@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/29 17:27:49 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/01 14:51:44 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,16 @@ void	error_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+#include <stdio.h>
+
+void	test_atol(const char *str, long expected_val, int expected_err)
+{
+	int	error;
+	long res;
+	
+	res = ft_atol(str, &error);
+	printf("Input: '%s' | Got: %ld, Error: %d | Expected: %ld, Error: %d -> %s\n",
+			str, res, error, expected_val, expected_err, (res == expected_val && error = expected_err) ? "SUCCESS": "FAIL");
 }

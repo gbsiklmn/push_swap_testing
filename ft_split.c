@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:40 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 16:08:22 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/01 14:31:22 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char *ft_strndup(const char *s, int n)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		i:
+	int		i;
 	int		len;
 
 	if (!s)
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			len = 0;
-			while (s[le] && s[le] != c)
+			while (s[len] && s[len] != c)
 				len++;
 			res[i++] = ft_strndup(s, len);
 			s += len;
