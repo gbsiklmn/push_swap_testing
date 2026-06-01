@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:06 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/28 16:58:10 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/05/29 13:29:49 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rr(t_node **a, t_node **b, t_stats *s)
 	write(1, "rr\n", 3);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -91,4 +91,4 @@ int	main(void)
 	free(node3);
 
 	return(0);
-}
+}*/
