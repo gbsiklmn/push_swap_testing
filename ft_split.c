@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:40 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 16:49:01 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 14:47:05 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	print_split_result(char **result)
 		printf("  (Empty array)\n");
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char s[20] = "Hello world from 42";
 	char **result;
@@ -122,4 +122,4 @@ int	main(void)
 	print_split_result(result);
     free_split(result);
 	
-}
+}*/

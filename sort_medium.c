@@ -6,7 +6,13 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:15 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 17:00:52 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 14:54:39 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+static int	get_max_pos(t_node *b)
+{
+	
+}
