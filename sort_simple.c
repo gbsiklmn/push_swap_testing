@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:18 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:34:33 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/02 16:56:05 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	simple_sort(t_node **a, t_node **b, t_stats *s)
 	}
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -152,4 +152,4 @@ int	main(void)
 		free(tmp);
 		tmp  = next;
 	}
-}
+}*/

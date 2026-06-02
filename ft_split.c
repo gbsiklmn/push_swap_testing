@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:40 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:21:27 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/02 16:30:37 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	free_split(char **split)
 	free(split);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 void	print_split_result(char **result)
 {
@@ -120,4 +120,4 @@ int	main(void)
 	result = ft_split(s, ' ');
 	print_split_result(result);
     free_split(result);
-}
+}*/
