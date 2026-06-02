@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:27:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:39:52 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:51:41 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ void	rrr(t_node **a, t_node **b, t_stats *s);
 
 /*ALGORITHMS*/
 void	simple_sort(t_node **a, t_node **b, t_stats *s);
-// void	chunk_sort(t_node **a, t_node **b, t_stats *s);
-// void	radix_sort(t_node **a, t_node **b, t_stats *s);
+void	chunk_sort(t_node **a, t_node **b, t_stats *s);
+void	radix_sort(t_node **a, t_node **b, t_stats *s);
 void	sort_3(t_node **a, t_stats *s);
 
 /*OUTPUT UTILS*/

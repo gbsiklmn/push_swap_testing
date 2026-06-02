@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:24:58 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:41:25 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/02 16:04:06 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,61 @@ void	print_disorder_and_strat(t_stats *s, long inv, int size)
 		ft_putstr_fd("Complex /0(n log n)\n", 2);
 	ft_putnbr_fd("total_ops: ", 2);
 	ft_putnbr_fd(s->total, 2);
+}
+static	void print_ops_counts(t_stats *s)
+{
+	ft_putstr_fd("\nsa: ", 2);
+	ft_putnbr_fd(s->sa, 2);
+	ft_putstr_fd("\tsb: ", 2);
+	ft_putnbr_fd(s->sb, 2);
+	ft_putstr_fd("\tss: ", 2);
+	ft_putnbr_fd(s->ss, 2);
+	ft_putchar_fd("\tpa: ", 2);
+	ft_putchar_fd(s->pa, 2);
+	ft_putstr_fd("\tpb: ", 2);
+	ft_putnbr_fd(s->pb, 2);
+	ft_putchar_fd("\nra: ", 2);
+	ft_putchar_fd(s->ra, 2);
+	ft_putstr_fd("\trb: ", 2);
+	ft_putnbr_fd(s->rb, 2);
+	ft_putstr_fd("\trr: ", 2);
+	ft_putnbr_fd(s->rr, 2);
+	ft_putstr_fd("\trra: ", 2);
+	ft_putnbr_fd(s->rra, 2);
+	ft_putstr_fd("\trrb: ", 2);
+	ft_putnbr_fd(s->rrb, 2);
+	ft_putstr_fd("\trrr: ", 2);
+	ft_putnbr_fd(s->rrr, 2);
+	ft_putstr_fd("\n", 2);
+}
+
+static	void print_bench(t_stats *s, long inv, int size)
+{
+	print_disorder_and_strat(s, inv, size);
+	print_ops_counts(s);
+}
+
+int	main(int argc, char **argv)
+{
+	t_node	*a;
+	t_node	*b;
+	t_stats stats;
+	long	initial_inv;
+	int		initial_size;
+
+	if (argc < 2)
+		return (0);
+	init_stats(&stats);
+	a = parse_input(argc, argv, &stats);
+	if (!a)
+		return (0);
+	initial_inv = get_inversions(a);
+	initial_size = stack_size(a);
+	b = NULL;
+	apply_sorting(&a, &b, &stats);
+	if (stats.bench)
+		print_bench(&stats, initial_inv, initial_size);
+	free_stack(&a);
+	free_stack(&b);
+	return (0);
 }
