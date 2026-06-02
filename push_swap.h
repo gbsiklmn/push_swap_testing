@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:27:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/26 18:25:15 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:39:52 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	enum e_strategy
+typedef enum e_strategy
 {
 	STRAT_ADAPTIVE,
 	STRAT_SIMPLE,
@@ -24,31 +24,31 @@ typedef	enum e_strategy
 	STRAT_COMPLEX
 }	t_strategy;
 
-typedef	struct s_stats
+typedef struct s_stats
 {
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	total;
-	int	bench;
+	int			sa;
+	int			sb;
+	int			ss;
+	int			pa;
+	int			pb;
+	int			ra;
+	int			rb;
+	int			rr;
+	int			rra;
+	int			rrb;
+	int			rrr;
+	int			total;
+	int			bench;
 	t_strategy	strat;
 }	t_stats;
 
-typedef	struct s_node
+typedef struct s_node
 {
-	int	value;
-	int	index;
-	struct s_node *next;
-	struct s_node *prev;
-} t_node;
+	int				value;
+	int				index;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
 
 /*CORE*/
 t_node	*parse_input(int argc, char **argv, t_stats *stats);
@@ -77,8 +77,8 @@ void	rrr(t_node **a, t_node **b, t_stats *s);
 
 /*ALGORITHMS*/
 void	simple_sort(t_node **a, t_node **b, t_stats *s);
-void	chunk_sort(t_node **a, t_node **b, t_stats *s);
-void	radix_sort(t_node **a, t_node **b, t_stats *s);
+// void	chunk_sort(t_node **a, t_node **b, t_stats *s);
+// void	radix_sort(t_node **a, t_node **b, t_stats *s);
 void	sort_3(t_node **a, t_stats *s);
 
 /*OUTPUT UTILS*/

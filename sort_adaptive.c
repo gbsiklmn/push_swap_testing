@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:10 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 14:53:26 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:28:01 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static	void run_adaptive(t_node **a, t_node **b, t_stats *s, int size)
 
 	inv = get_inversions(*a);
 	max_inv = (long)size * (size - 1) / 2;
-	if (size <= 10 || (max_inv >0 && inv < max_inv / 5))
+	if (size <= 10 || (max_inv > 0 && inv < max_inv / 5))
 	{
 		s->strat = STRAT_SIMPLE;
 		simple_sort(a, b, s);
 	}
-	else if (max_inv >0 && inv < max_inv / 2)
+	else if (max_inv > 0 && inv < max_inv / 2)
 	{
 		s->strat = STRAT_MEDIUM;
 		chunk_sort(a, b, s);

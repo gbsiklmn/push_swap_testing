@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/29 15:15:21 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:37:40 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_node	*new_node(int value)
 void	add_back(t_node **stack, t_node *new)
 {
 	t_node	*curr;
-	
+
 	if (!*stack)
 	{
 		*stack = new;
@@ -44,7 +44,7 @@ void	add_back(t_node **stack, t_node *new)
 
 int	stack_size(t_node *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack)

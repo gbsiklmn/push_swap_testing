@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:18 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/29 14:52:42 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:34:33 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	sort_3(t_node **a, t_stats *s)
 static	int	get_min_pos(t_node *a)
 {
 	t_node	*tmp;
-	int	min;
-	int	pos;
-	int	i;
+	int		min;
+	int		pos;
+	int		i;
 
 	tmp = a;
 	min = tmp->value;
@@ -67,10 +67,10 @@ static	void	push_min(t_node **a, t_node **b, t_stats *s)
 {
 	int	pos;
 	int	size;
-	
+
 	pos = get_min_pos(*a);
 	size = stack_size(*a);
-	if (pos <= size  / 2)
+	if (pos <= size / 2)
 	{
 		while (pos --)
 			ra(a, s);
@@ -103,7 +103,7 @@ void	simple_sort(t_node **a, t_node **b, t_stats *s)
 	}
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -133,13 +133,13 @@ int	main(void)
 		tmp = tmp->next;
 	}
 	printf("\n\n");
-	
+
 	simple_sort(&stack_a, &stack_b, &stats);
-	
+
 	printf("--- After simple_sort --\n");
 	tmp = stack_a;
 	printf("Stack A: ");
-	while(tmp)
+	while (tmp)
 	{
 		printf("%d ", tmp->value);
 		tmp = tmp->next;
@@ -152,4 +152,4 @@ int	main(void)
 		free(tmp);
 		tmp  = next;
 	}
-}*/
+}

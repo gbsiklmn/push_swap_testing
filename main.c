@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:24:58 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/26 18:42:44 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:41:25 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	void	init_stats(t_stats *stats)
 {
 	unsigned char	*p;
-	size_t	i;
+	size_t			i;
 
 	p = (unsigned char *)stats;
 	i = 0;
@@ -24,7 +24,7 @@ static	void	init_stats(t_stats *stats)
 	stats->strat = STRAT_ADAPTIVE;
 }
 
-static	void print_disorder_and_strat(t_stats *s, long inv, int size);
+void	print_disorder_and_strat(t_stats *s, long inv, int size)
 {
 	long	max_inv;
 	long	disorder;

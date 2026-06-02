@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:40 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 14:47:05 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:21:27 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static int	count_words(const char *s, char c)
 {
-	int count;
-	int in;
+	int	count;
+	int	in;
 
 	count = 0;
 	in = 0;
-	while(*s)
+	while (*s)
 	{
 		if (*s != c && !in)
 		{
@@ -33,10 +33,10 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static char *ft_strndup(const char *s, int n)
+static char	*ft_strndup(const char *s, int n)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	str = malloc(n + 1);
 	if (!str)
@@ -59,7 +59,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	res = malloc(sizeof(char *) * (count_words(s, c) +1));
+	res = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -82,15 +82,14 @@ char	**ft_split(char const *s, char c)
 
 void	free_split(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!split)
 		return ;
-	while (split[i])	
+	while (split[i])
 		free(split[i++]);
 	free(split);
-	
 }
 
 #include <stdio.h>
@@ -101,7 +100,7 @@ void	print_split_result(char **result)
 	if (!result)
 	{
 		printf("Result is NULL\n");
-		return;
+		return ;
 	}
 	i = 0;
 	while (result[i])
@@ -113,7 +112,7 @@ void	print_split_result(char **result)
 		printf("  (Empty array)\n");
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char s[20] = "Hello world from 42";
 	char **result;
@@ -121,5 +120,4 @@ void	print_split_result(char **result)
 	result = ft_split(s, ' ');
 	print_split_result(result);
     free_split(result);
-	
-}*/
+}

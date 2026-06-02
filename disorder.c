@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:48:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/27 17:59:01 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:01:23 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ long	get_inversions(t_node *a)
 
 	inv = 0;
 	i = a;
-	while(i)
+	while (i)
 	{
 		j = i->next;
-		while(j)
+		while (j)
 		{
 			if (i->value > j->value)
 				inv++;

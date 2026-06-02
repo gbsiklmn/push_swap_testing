@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 14:32:50 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:40:44 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ static	void	process_arg(char *arg, t_node **a)
 t_node	*parse_input(int argc, char **argv, t_stats *stats)
 {
 	t_node	*a;
-	int	i;
+	int		i;
 
 	a = NULL;
 	i = 0;
-	while(++i < argc)
+	while (++i < argc)
 	{
 		if (argv[i][0] == '-' && argv[i][1] == '-')
 		{
