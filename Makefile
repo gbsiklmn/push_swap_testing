@@ -2,7 +2,7 @@ NAME 	= push_swap
 CC		= gcc
 CFLAGS 	= -Wall -Wextra -Werror
 
-SRCS 	= main.c parsing.c stack.c push.c swap.c rotate.c reverse_rotate \
+SRCS 	= main.c parsing.c stack.c push.c swap.c rotate.c reverse_rotate.c \
 			sort_simple.c sort_medium.c sort_complex.c sort_adaptive.c \
 			utils.c ft_split.c disorder.c output_utils.c 
 

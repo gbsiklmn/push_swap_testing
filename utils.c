@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 15:18:06 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/04 17:02:54 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	error_exit(void)
 	exit(1);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 void test_atol(const char *str, long expected_val, int expected_err)
 {
@@ -101,7 +101,7 @@ void test_atol(const char *str, long expected_val, int expected_err)
            (res == expected_val && error == expected_err) ? "SUCCESS" : "FAIL");
 }
 
-/*int	main(void)
+int	main(void)
 {
 	printf("---Testing ft_strcmp\n");
 	printf("Same strings('abc', 'abc'): %d (Expected: 0)\n", ft_strcmp("abc", "abc"));

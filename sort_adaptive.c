@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:10 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 19:10:59 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/04 17:03:50 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	apply_sorting(t_node **a, t_node **b, t_stats *s)
 		run_adaptive(a, b, s, size);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 t_node *build_stack(int	*arr, int size)
 {
@@ -80,7 +80,7 @@ void print_strategy(int strat)
 		printf("-> Manager Chose: Unknown\n");
 }
 
-/*int	main(void)
+int	main(void)
 {
 	t_node *a;
 	t_node *b = NULL;

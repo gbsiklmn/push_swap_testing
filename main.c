@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:24:58 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 16:04:06 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:49:24 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	print_disorder_and_strat(t_stats *s, long inv, int size)
 	ft_putstr_fd("%\nstrategy: ", 2);
 	if (s->strat == STRAT_ADAPTIVE)
 		ft_putstr_fd("Adaptive / 0(n\\sqrt(n))\n", 2);
-	else if (s->strat == STRAT_ADAPTIVE)
-		ft_putchar_fd("Simple / 0(n^2)\n", 2);
+	else if (s->strat == STRAT_SIMPLE)
+		ft_putstr_fd("Simple / 0(n^2)\n", 2);
 	else if (s->strat == STRAT_MEDIUM)
 		ft_putstr_fd("Medium / 0(n\\sqrt(n))\n", 2);
 	else
 		ft_putstr_fd("Complex /0(n log n)\n", 2);
-	ft_putnbr_fd("total_ops: ", 2);
+	ft_putstr_fd("total_ops: ", 2);
 	ft_putnbr_fd(s->total, 2);
 }
 static	void print_ops_counts(t_stats *s)
@@ -59,12 +59,12 @@ static	void print_ops_counts(t_stats *s)
 	ft_putnbr_fd(s->sb, 2);
 	ft_putstr_fd("\tss: ", 2);
 	ft_putnbr_fd(s->ss, 2);
-	ft_putchar_fd("\tpa: ", 2);
-	ft_putchar_fd(s->pa, 2);
+	ft_putstr_fd("\tpa: ", 2);
+	ft_putnbr_fd(s->pa, 2);
 	ft_putstr_fd("\tpb: ", 2);
 	ft_putnbr_fd(s->pb, 2);
-	ft_putchar_fd("\nra: ", 2);
-	ft_putchar_fd(s->ra, 2);
+	ft_putstr_fd("\nra: ", 2);
+	ft_putnbr_fd(s->ra, 2);
 	ft_putstr_fd("\trb: ", 2);
 	ft_putnbr_fd(s->rb, 2);
 	ft_putstr_fd("\trr: ", 2);

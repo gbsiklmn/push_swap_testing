@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:15 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 18:46:26 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/04 17:01:19 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	chunk_sort(t_node **a, t_node **b, t_stats *s)
 	push_back(a, b, s);	
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 void print_stack(t_node *stack, const char *name)
 {
@@ -102,7 +102,7 @@ void print_stack(t_node *stack, const char *name)
 	}
 	printf("\n");
 }
-/*
+
 int	main(void)
 {
 	t_node	*a = NULL;
