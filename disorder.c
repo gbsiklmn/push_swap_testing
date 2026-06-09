@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:48:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/09 15:24:02 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:38:18 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(void)
 	node3->value = 2;
 	node3->next = NULL;
 
-	mistakes = get_inversions(node1);
+	mistakes = get_disorder(node1);
 	printf("testing stack: 3, 1, 2\n");
 	printf("total inversions found: %ld\n", mistakes);
 	printf("expected inversions: 2 (3>1 and 3>2)\n");
