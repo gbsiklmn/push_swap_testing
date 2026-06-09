@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:15 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/04 17:01:19 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:48:27 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ static int	get_max_pos(t_node *b)
 	}
 	return (max_pos);
 }
-static void push_back(t_node **a, t_node **b, t_stats *s)
+
+static void	push_back(t_node **a, t_node **b, t_stats *s)
 {
 	int	max_pos;
-	int size;
-	
+	int	size;
+
 	while (stack_size(*b))
 	{
 		max_pos = get_max_pos(*b);
@@ -53,7 +54,7 @@ static void push_back(t_node **a, t_node **b, t_stats *s)
 		{
 			max_pos = size - max_pos;
 			while (max_pos--)
-				rrb(b, s);	
+				rrb(b, s);
 		}
 		pa(a, b, s);
 	}
@@ -74,7 +75,8 @@ void	chunk_sort(t_node **a, t_node **b, t_stats *s)
 		if ((*a)->index <= i)
 		{
 			pb(a, b, s);
-			rb(b, s);
+			if (stack_size(*b) > 1)
+				rb(b, s);
 			i++;
 		}
 		else if ((*a)->index <= i + chunk)

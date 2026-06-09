@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/04 17:02:54 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:47:48 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ static long	parse_digits(const char *str, int s, int *error)
 
 long	ft_atol(const char *str, int *error)
 {
-	int s;
+	int	s;
+
 	s = 1;
 	*error = 0;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
@@ -70,10 +71,7 @@ long	ft_atol(const char *str, int *error)
 		str++;
 	}
 	else if (*str == '+')
-	{
-		*error = 1;
-		return (0);
-	}
+		str++;
 	if (*str == '0' && str[1] != '\0' && str[1] != ' ')
 	{
 		*error = 1;

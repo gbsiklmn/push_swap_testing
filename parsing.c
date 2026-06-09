@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/04 16:07:53 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:46:26 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ static	void	process_arg(char *arg, t_node **a)
 	int		err;
 	int		j;
 	long	val;
+	t_node	*node;
 
 	nums = ft_split(arg, ' ');
 	if (!nums || !nums[0])
@@ -64,7 +65,10 @@ static	void	process_arg(char *arg, t_node **a)
 		val = ft_atol(nums[j], &err);
 		if (err)
 			error_exit();
-		add_back(a, new_node((int)val));
+		node = new_node((int)val);
+		if (!node)
+			error_exit();
+		add_back(a, node);
 		j++;
 	}
 	free_split(nums);
