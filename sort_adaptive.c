@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:10 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/04 17:03:50 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:25:45 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static	void run_adaptive(t_node **a, t_node **b, t_stats *s, int size)
 	long	inv;
 	long	max_inv;
 
-	inv = get_inversions(*a);
+	inv = get_disorder(*a);
 	max_inv = (long)size * (size - 1) / 2;
 	if (size <= 10 || (max_inv > 0 && inv < max_inv / 5))
 	{

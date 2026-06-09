@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:24:58 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/04 16:49:24 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:27:27 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	main(int argc, char **argv)
 	a = parse_input(argc, argv, &stats);
 	if (!a)
 		return (0);
-	initial_inv = get_inversions(a);
+	initial_inv = get_disorder(a);
 	initial_size = stack_size(a);
 	b = NULL;
 	apply_sorting(&a, &b, &stats);

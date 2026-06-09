@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:48:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:01:23 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:24:02 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	get_inversions(t_node *a)
+long	get_disorder(t_node *a)
 {
 	long	inv;
 	t_node	*i;

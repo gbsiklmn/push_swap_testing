@@ -6,7 +6,7 @@
 /*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:27:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:51:41 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:25:12 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 
 /*UTILS*/
-long	get_inversions(t_node *a);
+long	get_disorder(t_node *a);
 void	error_exit(void);
 char	**ft_split(char const *s, char c);
 void	free_split(char	**split);
