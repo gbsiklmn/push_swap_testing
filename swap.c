@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:24 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/29 17:15:55 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:12:56 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void swap(t_node **stack)
+static	void	swap(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;
 
-	if(!stack || !*stack || !(*stack)->next)
-		return;
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
 	first = *stack;
 	second = first->next;
 	first->next = second->next;
@@ -29,6 +29,7 @@ static	void swap(t_node **stack)
 	first->prev = second;
 	*stack = second;
 }
+
 void	sa(t_node **a, t_stats *s)
 {
 	swap(a);
@@ -36,6 +37,7 @@ void	sa(t_node **a, t_stats *s)
 	s->total++;
 	write(1, "sa\n", 3);
 }
+
 void	sb(t_node **b, t_stats *s)
 {
 	swap(b);
@@ -77,12 +79,14 @@ int	main(void)
 	t_node	*stack_a = node1;
 	
 	printf("---Before sa --- \n");
-	printf("Stack A: %d -> %d -> %d\n", stack_a->value, stack_a->next->value, stack_a->next->next->value );
+	printf("Stack A: %d -> %d -> %d\n", stack_a->value, 
+		stack_a->next->value, stack_a->next->next->value );
 	
 	sa(&stack_a, &stats);
 
 	printf("\n ---- After sa ---\n");
-	printf("Stack A: %d -> %d -> %d\n", stack_a->value, stack_a->next->value, stack_a->next->next->value);
+	printf("Stack A: %d -> %d -> %d\n", stack_a->value, 
+		stack_a->next->value, stack_a->next->next->value);
 	printf("\nTotal operations tracked: %d\n", stats.total);
 
 	free(node1);

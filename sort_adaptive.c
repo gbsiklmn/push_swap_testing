@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:10 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/09 15:25:45 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:21:24 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void run_adaptive(t_node **a, t_node **b, t_stats *s, int size)
+static	void	run_adaptive(t_node **a, t_node **b, t_stats *s, int size)
 {
 	long	inv;
 	long	max_inv;
@@ -39,11 +39,12 @@ static	void run_adaptive(t_node **a, t_node **b, t_stats *s, int size)
 void	apply_sorting(t_node **a, t_node **b, t_stats *s)
 {
 	int	size;
+
 	if (is_sorted(*a))
-		return;
+		return ;
 	size = stack_size(*a);
 	if (size < 2)
-		return;
+		return ;
 	if (s->strat == STRAT_SIMPLE)
 		simple_sort(a, b, s);
 	else if (s->strat == STRAT_MEDIUM)

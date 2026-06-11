@@ -6,7 +6,7 @@
 /*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/09 16:47:48 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:13:30 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
+
 static long	parse_digits(const char *str, int s, int *error)
 {
 	long	res;
@@ -94,7 +95,8 @@ void test_atol(const char *str, long expected_val, int expected_err)
     long res;
 
     res = ft_atol(str, &error);
-    printf("Input: '%s' | Got: %ld, Error: %d | Expected: %ld, Error: %d -> %s\n",
+    printf("Input: '%s' | Got: %ld, Error: %d | 
+		Expected: %ld, Error: %d -> %s\n",
            str, res, error, expected_val, expected_err,
            (res == expected_val && error == expected_err) ? "SUCCESS" : "FAIL");
 }
@@ -102,9 +104,12 @@ void test_atol(const char *str, long expected_val, int expected_err)
 int	main(void)
 {
 	printf("---Testing ft_strcmp\n");
-	printf("Same strings('abc', 'abc'): %d (Expected: 0)\n", ft_strcmp("abc", "abc"));
-	printf("S1 greater ('abd', 'abc'): %d (Expected: >0)\n", ft_strcmp("abd", "abc"));
-	printf("S2 greater ('abc', 'abd'): %d (Expected: <0)\n\n", ft_strcmp("abc", "abd"));
+	printf("Same strings('abc', 'abc'): %d (Expected: 0)\n", 
+		ft_strcmp("abc", "abc"));
+	printf("S1 greater ('abd', 'abc'): %d (Expected: >0)\n", 
+		ft_strcmp("abd", "abc"));
+	printf("S2 greater ('abc', 'abd'): %d (Expected: <0)\n\n", 
+		ft_strcmp("abc", "abd"));
 	
 	printf("===Testing is_sorted ---\n");
 	t_node *n1 = malloc(sizeof(t_node));
@@ -135,7 +140,8 @@ int	main(void)
 	test_atol("42a", 0, 1);
 
 	printf("\n====Testing error_exit----\n");
-	printf("Executing error_exit now. The program should print 'Error' and exit immediately:\n ");
+	printf("Executing error_exit now. The program should 
+		print 'Error' and exit immediately:\n ");
 	
 	error_exit();
 	printf("If you see this line, error_exit failed to terminate the program\n");

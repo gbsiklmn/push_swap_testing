@@ -6,7 +6,7 @@
 /*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/02 15:37:40 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:23:06 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
 
-	while(*stack)
+	while (*stack)
 	{
 		tmp = (*stack)->next;
 		free(*stack);

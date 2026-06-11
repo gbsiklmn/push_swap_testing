@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:50 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 14:39:57 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:19:57 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	if (!s)
 		return ;
@@ -33,7 +34,7 @@ void	ft_putstr_fd(char *s, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
-	
+
 	nb = n;
 	if (nb < 0)
 	{

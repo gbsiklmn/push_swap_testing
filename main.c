@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:24:58 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/09 15:27:27 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:19:33 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	print_disorder_and_strat(t_stats *s, long inv, int size)
 	ft_putstr_fd("total_ops: ", 2);
 	ft_putnbr_fd(s->total, 2);
 }
-static	void print_ops_counts(t_stats *s)
+
+static	void	print_ops_counts(t_stats *s)
 {
 	ft_putstr_fd("\nsa: ", 2);
 	ft_putnbr_fd(s->sa, 2);
@@ -78,7 +79,7 @@ static	void print_ops_counts(t_stats *s)
 	ft_putstr_fd("\n", 2);
 }
 
-static	void print_bench(t_stats *s, long inv, int size)
+static	void	print_bench(t_stats *s, long inv, int size)
 {
 	print_disorder_and_strat(s, inv, size);
 	print_ops_counts(s);
@@ -88,7 +89,7 @@ int	main(int argc, char **argv)
 {
 	t_node	*a;
 	t_node	*b;
-	t_stats stats;
+	t_stats	stats;
 	long	initial_inv;
 	int		initial_size;
 

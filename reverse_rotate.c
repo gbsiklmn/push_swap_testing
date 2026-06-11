@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:03 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/01 15:50:58 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:12:02 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rev_rotate(t_node **stack)
+static void	rev_rotate(t_node **stack)
 {
 	t_node	*last;
 
@@ -53,49 +53,51 @@ void	rrr(t_node **a, t_node **b, t_stats *s)
 	write(1, "rrr\n", 4);
 }
 
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	t_node *node1 = malloc(sizeof(t_node));
-	t_node *node2 = malloc(sizeof(t_node));
-	t_node *node3 = malloc(sizeof(t_node));
+// int	main(void)
+// {
+// 	t_node	*node1 = malloc(sizeof(t_node));
+// 	t_node	*node2 = malloc(sizeof(t_node));
+// 	t_node	*node3 = malloc(sizeof(t_node));
 
-	t_stats	stats = {0};
+// 	t_stats	stats = {0};
 
-	node1->value = 1;
-	node1->prev = NULL;
-	node1->next = node2;
-	
-	node2->value = 2;
-	node2->prev = node1;
-	node2->next = node3;
-	
-	node3->value = 3;
-	node3->prev = node2;
-	node3->next = NULL;
+// 	node1->value = 1;
+// 	node1->prev = NULL;
+// 	node1->next = node2;
 
-	t_node *stack_a = node1;
+// 	node2->value = 2;
+// 	node2->prev = node1;
+// 	node2->next = node3;
 
-	printf("---Before rra ---\n");
-	printf("Stack A: %d -> %d - > %d\n", stack_a->value, stack_a->next->value, stack_a->next->next->value);
-	rra(&stack_a, &stats);
+// 	node3->value = 3;
+// 	node3->prev = node2;
+// 	node3->next = NULL;
 
-	printf("\n --- After rra --\n");
-	if (stack_a && stack_a->next && stack_a->next->next)
-	{
-		printf("Stack A: %d -> %d -> %d\n", stack_a->value, stack_a->next->value, stack_a->next->next->value);
-	}
-	else
-	{
-		printf("Oops, your stack pointers are broken or empty\n");	
-	}
-	
-	printf("\nTotal operations tracked: %d\n", stats.total);
+// 	t_node	*stack_a = node1;
 
-	free(node1);
-	free(node2);
-	free(node3);
+// 	printf("---Before rra ---\n");
+// 	printf("Stack A: %d -> %d - > %d\n", stack_a->value, 
+//		stack_a->next->value, stack_a->next->next->value);
+// 	rra(&stack_a, &stats);
 
-	return(0);
-}*/
+// 	printf("\n --- After rra --\n");
+// 	if (stack_a && stack_a->next && stack_a->next->next)
+// 	{
+// 		printf("Stack A: %d -> %d -> %d\n", stack_a->value, 
+//			stack_a->next->value, stack_a->next->next->value);
+// 	}
+// 	else
+// 	{
+// 		printf("Oops, your stack pointers are broken or empty\n");
+// 	}
+
+// 	printf("\nTotal operations tracked: %d\n", stats.total);
+
+// 	free(node1);
+// 	free(node2);
+// 	free(node3);
+
+// 	return (0);
+// }

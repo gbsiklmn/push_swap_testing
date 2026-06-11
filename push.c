@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:59 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/28 16:40:23 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:20:16 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	push(t_node **src, t_node **dst)
 	if (*src)
 		(*src)->prev = NULL;
 	tmp->next = *dst;
-	if(*dst)
+	if (*dst)
 		(*dst)->prev = tmp;
 	*dst = tmp;
 }

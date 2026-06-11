@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:06 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/05/29 13:29:49 by lstarkov         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:12:19 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rotate(t_node **stack)
 	t_node	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	last = *stack;
 	while (last->next)
@@ -80,7 +80,8 @@ int	main(void)
 	t_node	*stack_a = node1;
 	
 	printf("Before ra");
-	printf("Stack A; %d -> %d -> %d\n", stack_a->value, stack_a->next->value, stack_a->next->next->value);
+	printf("Stack A; %d -> %d -> %d\n", stack_a->value, 
+		stack_a->next->value, stack_a->next->next->value);
 	
 	ra(&stack_a, &stats);
 	

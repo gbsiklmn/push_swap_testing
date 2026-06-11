@@ -6,7 +6,7 @@
 /*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:15 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/09 16:48:27 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:12:40 by jduque-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,13 @@ static void	push_back(t_node **a, t_node **b, t_stats *s)
 void	chunk_sort(t_node **a, t_node **b, t_stats *s)
 {
 	int	chunk;
-	int i;
-	
+	int	i;
+
 	i = 0;
 	assign_index(*a);
 	chunk = 35;
-	if (stack_size(*a) <= 100)
-		chunk = 15;
-	while ( (*a))
+	chunk = chunk_sort_size(a, chunk);
+	while (*a)
 	{
 		if ((*a)->index <= i)
 		{
@@ -87,7 +86,15 @@ void	chunk_sort(t_node **a, t_node **b, t_stats *s)
 		else
 			ra(a, s);
 	}
-	push_back(a, b, s);	
+	push_back(a, b, s);
+}
+
+int	chunk_sort_size(t_node **a, int chunk)
+{
+	if (stack_size(*a) <= 100)
+		return (chunk = 15);
+	else
+		return (chunk);
 }
 
 /*#include <stdio.h>
@@ -111,7 +118,8 @@ int	main(void)
 	t_node	*b = NULL;
 	t_stats stats = {0};
 
-	int	nums[] = {42, -5, 12, 88, 1, 99, -10, 3, 15, 77, 2, 8, 23, 64, -30, 50, 4, 9, 11, -1};
+	int	nums[] = {42, -5, 12, 88, 1, 99, -10, 3, 15, 
+		77, 2, 8, 23, 64, -30, 50, 4, 9, 11, -1};
 	int	i = 0;
 
 	while (i < 20)
