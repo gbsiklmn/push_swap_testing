@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:53:26 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/11 19:13:30 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/13 16:28:19 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ long	ft_atol(const char *str, int *error)
 	return (parse_digits(str, s, error));
 }
 
-void	error_exit(void)
+void	error_exit(t_node **a)
 {
+	if (a && *a)
+		free_stack(a);
 	write(2, "Error\n", 6);
 	exit(1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 17:27:21 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/11 19:08:14 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/13 16:33:19 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_putchar_fd(char c, int fd);
 
 /*UTILS*/
 long	get_disorder(t_node *a);
-void	error_exit(void);
+void	error_exit(t_node **a);
 char	**ft_split(char const *s, char c);
 void	free_split(char	**split);
 int		ft_strcmp(const char *s1, const char *s2);

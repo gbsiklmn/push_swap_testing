@@ -184,7 +184,7 @@ C Standard Library documentation;
 google.com, stackoverflow.com, reddit.com and other online resources were used in the creation of the project;
 AI was used to clarify some technical issues;
 Google Translate and Grammarly were used in preparing the documentation file;
-Library ft_pintf.
+
 
 # Summary
 This implementation combines multiple sorting strategies into an adaptive framework.

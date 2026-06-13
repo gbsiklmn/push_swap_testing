@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jduque-n <jduque-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lstarkov <lstarkov@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:52:53 by lstarkov          #+#    #+#             */
-/*   Updated: 2026/06/11 16:10:34 by jduque-n         ###   ########.fr       */
+/*   Updated: 2026/06/13 16:40:05 by lstarkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,26 @@ static	int	handle_flags(char *arg, t_stats *stats)
 	return (1);
 }
 
-static	void	check_duplicates(t_node *stack)
+static	void	check_duplicates(t_node **stack)
 {
 	t_node	*i;
 	t_node	*j;
 
-	i = stack;
+	i = *stack;
 	while (i)
 	{
 		j = i->next;
 		while (j)
 		{
 			if (i->value == j->value)
-				error_exit();
+				error_exit(stack);
 			j = j->next;
 		}
 		i = i->next;
 	}
 }
 
-static	void	process_arg(char *arg, t_node **a)
+static	int	process_arg(char *arg, t_node **a)
 {
 	char	**nums;
 	int		err;
@@ -58,20 +58,21 @@ static	void	process_arg(char *arg, t_node **a)
 
 	nums = ft_split(arg, ' ');
 	if (!nums || !nums[0])
-		error_exit();
+		return (error_exit(a), -1);
 	j = 0;
 	while (nums[j])
 	{
 		val = ft_atol(nums[j], &err);
 		if (err)
-			error_exit();
+			return (free_split(nums), error_exit(a), -1);
 		node = new_node((int)val);
 		if (!node)
-			error_exit();
+			return (free_split(nums), error_exit(a), -1);
 		add_back(a, node);
 		j++;
 	}
 	free_split(nums);
+	return (0);
 }
 
 t_node	*parse_input(int argc, char **argv, t_stats *stats)
@@ -86,13 +87,13 @@ t_node	*parse_input(int argc, char **argv, t_stats *stats)
 		if (argv[i][0] == '-' && argv[i][1] == '-')
 		{
 			if (!handle_flags(argv[i], stats))
-				error_exit();
+				error_exit(&a);
 			continue ;
 		}
 		process_arg(argv[i], &a);
 	}
 	if (a)
-		check_duplicates(a);
+		check_duplicates(&a);
 	return (a);
 }
 
