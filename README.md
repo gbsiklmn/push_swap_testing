@@ -189,3 +189,7 @@ Google Translate and Grammarly were used in preparing the documentation file;
 # Summary
 This implementation combines multiple sorting strategies into an adaptive framework.
 By measuring the initial disorder of the input stack, the program dynamically selects the most appropriate algorithm to minimize the number of operations.
+
+## Contributions
+We (<lstarkov> and <jduque-n>) worked together on this code, writing each function as the normal workflow required it to complete each part of the complete project, attempted to improve its efficiency in some algorithms, and tested it for efficiency, memory leaks and error management. We also consulted with other students that had already completed the projecton on the internal logic ofthe program, how to demonstrate if we understood the code and the specifics of the evaluation process.
+
